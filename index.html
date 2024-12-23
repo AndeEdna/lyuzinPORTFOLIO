@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/normalize.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" defer></script>
+    <script src="./src/css/main.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body id="large-header">
+    <canvas id="demo-canvas"></canvas>
+    <section class="nav">
+        <div class="logo">
+            <a href="index.html"><img src="src/image/logo.png" alt="Logo" width="100px"></a>
+        </div>
+        <div class="menu">
+            <a href="#">Портфолио</a>
+            <a href="#">Услуги</a>
+            <a href="#">Мои работы</a>
+        </div>
+        <div class="contact" id="openModal">
+            <button>Связь со мной</button>
+        </div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                <span id="closeModal" class="close">&times;</span>
+                <h2 style="text-align: center;">Связь со мной</h2>
+            </div>
+                <form class="formM">
+                <div class="form-content">
+                    <label for="name">Как вас зовут?</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-content">
+                    <label for="email">Ваш e-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-content">
+                    <label for="subject">Тема</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-container">
+            <h1>Обо мне</h1>
+            <div class="about-text">
+                <p>Привет! Меня зовут Люзин Никита, псевдоним:”Ande”, и я начинающий бекэнд-разработчик с увлечением к
+                    созданию эффективных и масштабируемых веб-приложений. Я освоил такие языки, как PHP и JavaScript, а
+                    также технологии HTML и CSS.<br><br>
+                    Моя специализация — разработка с использованием фреймворка Laravel, который позволяет мне создавать
+                    мощные и гибкие веб-приложения.<br><br>
+                    Я открыт для новых возможностей и готов к сотрудничеству. Если вы ищете ответственного и
+                    целеустремленного разработчика, который готов учиться и развиваться, буду рад обсудить возможное
+                    сотрудничество!</p>
+                <img src="src/image/face.png">
+            </div>
+        </div>
+    </section>
+    <section class="main">
+        <div class="main-container">
+            <div class="main-title">
+                <h1>Уровень знаний</h1>
+            </div>
+            <div class="skills-box">
+                <div class="site-skill">
+                    <div class="skill">
+                        <span>HTML+CSS <img src="src/image/html.png" width="20px"> <img src="src/image/css.png" width="20px"> </span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%;" data-skill="90%">90%</div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>JS <img src="src/image/js.png" width="20px"></span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%;" data-skill="60%">60%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="site-skill">
+                    <div class="skill">
+                        <span>PHP <img src="src/image/php.png" width="20px"></span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%;" data-skill="50%">50%</div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Laravel <img src="src/image/laravel.png" width="20px"></span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%;" data-skill="40%">40%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="projects">
+        <h1>Мои работы</h1>
+        <div class="projects-body">
+            <div class="project">
+                <h2>Платформа для обучения</h3>
+                <img src="./src/image/logo2.png">
+                <button>
+                    Платформа для обучения
+                </button>
+            </div>
+            <div class="project">
+                <h2>CRM система</h3>
+                    <img src="./src/image/logo2.png">
+                <button>
+                    CRM Система
+                </button>
+            </div>
+            <div class="project">
+                <h2>Телефонный справочник</h3>
+                    <img src="./src/image/logo2.png">
+                <button>
+                    Телефонный справочник
+                </button>
+            </div>   
+        </div>
+    </section>
+
+
+    <section class="misc">
+        <!-- <div class="magic-box vibrate">
+            <h3>Что это?</h3>
+        </div>
+        <div class="magic-box flash">
+            <h3>Магический элемент 2</h3>
+        </div> -->
+        <div class="magic-box" id="rotateBox">
+            <h3>Нажми на меня</h3>
+        </div>
+    </section>
+    
+    
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <h2>Контакты</h2>
+                <p>Email: uvxtgvg@mail.ru</p>
+                <p>Телефон: +7 (123) 456-78-90</p>
+            </div>
+            <div class="footer-socials">
+                <h2>Социальные сети</h2>
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Вконтакте</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Никита Люзин. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <!-- Выпадающее окно
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>123</h2>
+        </div>
+    </div> -->
+
+</body>
+
+</html>

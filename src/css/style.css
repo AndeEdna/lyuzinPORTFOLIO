@@ -1,0 +1,516 @@
+@font-face {
+    font-family: 'MontserratEB';
+    src: url(../fonts/Montserrat-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: 'MontserratL';
+    src: url(../fonts/Montserrat-Light.ttf);
+}
+
+@font-face {
+    font-family: 'MontserratM';
+    src: url(../fonts/Montserrat-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'MontserratR';
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'MontserratB';
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'MontserratSM';
+    src: url(../fonts/Montserrat-SemiBold.ttf);
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
+    background-repeat: repeat;
+    background-size: cover; 
+    height: auto; /* Позволяет высоте страницы увеличиваться в зависимости от контента */
+    overflow-y: auto; /* Включает вертикальную прокрутку */
+}
+
+.nav{
+    display: flex;
+    position: fixed;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    height: 70px;
+    background-color: black;
+    color: white;
+    border-radius: 0px 0px 90px 90px;
+    font-family: 'MontserratSM';
+    z-index: 5;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    width: 60%;
+}
+
+.menu>a{
+    color: white;
+}
+
+.menu a:hover{
+    color: #014855de;
+}
+
+.contact{
+    border: 2px solid white;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.contact:hover{
+    color: #014855de;
+    border: 2px solid #014855de;
+}
+
+
+
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 100%;
+    margin-top: 150px;
+    z-index: 1;
+}
+
+.about-container{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 60px 40px -7px;
+}
+.about-container>h1{
+    color: white;
+    font-family: 'MontserratM';
+    font-size: 25px;
+}
+
+.about-text{
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-family: 'MontserratR';
+}
+
+.about-text>p{
+    max-width: 700px;
+}
+
+
+
+.main {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    
+}
+
+.main-title{
+    color: white;
+    font-family: 'MontserratB';
+    font-size: 25px;
+}
+
+.main-container{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(255, 255, 255, 0.4) 0px 0px 0px 2px, #014855de 0px 10px 6px -1px, rgba(0, 0, 0, 0.948) 0px 1px 0px inset;
+}
+
+.skill {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: white;
+    font-family: 'MontserratM';
+    width: 100%;
+    gap: 5px;
+}
+
+
+
+.progress-bar {
+    display: flex;
+    background-color: #ffffffc4;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 40px;
+    width: 100%;
+}
+
+.progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #014855de; /* Цвет заполнения */
+    height: 100%;
+    line-height: 20px; /* Центрируем текст по вертикали */
+    color: white;
+    text-align: center;
+    transition: width 1s ease; /* Плавная анимация */
+    font-family: 'MontserratM';
+    width: 100%;
+}
+
+.skills-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.site-skill{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    gap: 20px;
+}
+
+
+.projects{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    gap: 20px;
+    z-index: 1;
+    height: 2000px;
+}
+.projects>h1{
+    color: white;
+    font-family: 'MontserratB';
+    font-size: 25px;
+    padding-top: 20px;
+}
+
+.projects-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 98%;
+    height: 100%;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+}
+
+.project{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    max-height: 100%;
+    border-radius: 20px;
+    box-shadow: rgba(255, 253, 253, 0.09) 0px 2px 1px, rgba(255, 255, 255, 0.09) 0px 4px 2px, rgba(255, 255, 255, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.project>button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'MontserratR';
+    font-size: 12px;
+    max-height: 100%;
+    padding: 10px;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+}
+
+.project>button:hover{
+    background-color: #014855de;
+}
+
+.project>img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'MontserratR';
+    font-size: 12px;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.project>h2{
+    display: flex;
+    width: 102%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'MontserratSM';
+    font-size: 14px;
+    height: 50px;
+    text-align: center;
+    background-color: #014855de;
+    border-radius: 20px 20px 0px 0px;
+}
+
+
+
+#demo-canvas {
+    position: fixed; /* Фиксированное позиционирование */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ширина на весь экран */
+    height: 100vh; /* Высота на весь экран */
+    z-index: 0; /* Размещаем позади других элементов */
+}
+
+
+
+.misc {
+    display: flex;
+    justify-content: space-around; /* Распределяем элементы по горизонтали */
+    align-items: center; /* Выравниваем по центру */
+    margin: 50px 0; /* Отступы сверху и снизу */
+    
+}
+
+.magic-box {
+    display: flex;
+    flex-direction: column;
+    background-color: #014855de; /* Цвет фона элемента */
+    color: white; /* Цвет текста */
+    border-radius: 15px; /* Закругление углов */
+    padding: 20px; /* Внутренние отступы */
+    text-align: center; /* Центрируем текст */
+    position: relative; /* Для абсолютного позиционирования псевдоэлементов */
+    overflow: hidden; /* Скрываем выходящие за пределы элементы */
+    width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Тень для эффекта поднятия */
+}
+
+/* Эффект вибрации при наведении */
+.magic-box:hover {
+    animation: vibrate 0.5s infinite alternate;
+}
+.magic-box>h3{
+    font-family: 'MontserratM';
+    font-size: 20px;
+}
+
+@keyframes vibrate {
+    0% { transform: translate(0); }
+    25% { transform: translate(-2px, -2px); }
+    50% { transform: translate(2px, -2px); }
+    75% { transform: translate(-2px, 2px); }
+    100% { transform: translate(2px, 2px); }
+}
+
+/* Эффект вспышки при наведении */
+.magic-box:hover.flash {
+    animation: flash 1s infinite alternate;
+}
+
+@keyframes flash {
+    0% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+/* Эффект вращения при наведении */
+.magic-box.rotate {
+    animation: rotate 0.7s infinite linear;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+
+
+
+.footer {
+    background-color: #014855de; /* Цвет фона футера */
+    color: white; /* Цвет текста */
+    padding: 40px 20px; /* Отступы */
+    text-align: center; /* Центрируем текст */
+    width: 100%;
+    
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around; /* Распределяем содержимое по горизонтали */
+    align-items: flex-start; /* Выравниваем по верхнему краю */
+    width: 100%; /* Максимальная ширина футера */
+    margin: 0 auto; /* Центрируем футер */
+}
+
+.footer-socials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+
+.footer h2 {
+    margin-bottom: 10px; /* Отступ снизу заголовка */
+    font-family: 'MontserratSM';
+}
+
+.footer a {
+    color: white; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-family: 'MontserratM';
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.footer-bottom {
+    margin-top: 20px; /* Отступ сверху для нижней части футера */
+}
+
+
+.modal {
+    display: none; /* Скрыть модальное окно по умолчанию */
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Черный фон с прозрачностью */
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff; /* Белый фон для содержимого */
+    border: 1px solid #888;
+    width: 400px; /* Ширина модального окна */
+    height: 270px;
+    color: black;
+    gap: 20px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.modal-header{
+    width: 100%;
+}
+
+
+.formM{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: space-between;
+    gap: 30px;
+    width: 100%;
+}
+
+.form-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-content>input{
+    border: 1px solid black;
+    border-radius: 10px;
+}
